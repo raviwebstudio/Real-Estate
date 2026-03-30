@@ -1,0 +1,199 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum PriceType {
+  FIXED
+  ON_REQUEST
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  SOLD
+  UNDER_CONSTRUCTION
+}
+
+enum ProjectStatus {
+  READY_TO_MOVE
+  UNDER_CONSTRUCTION
+  PRE_LAUNCH
+}
+
+enum PropertyTagType {
+  FEATURED
+  LUXURY
+  INVESTMENT
+  HOT_SALE
+  BEST_SELLER
+  CLOSED
+}
+
+enum LeadType {
+  GENERAL
+  GET_PRICE
+  DOWNLOAD_BROCHURE
+  BOOK_SITE_VISIT
+}
+
+enum BlogCategory {
+  INVESTMENT
+  GURGAON_INSIGHTS
+  PROPERTY_GUIDES
+}
+
+model Builder {
+  id             String     @id @default(cuid())
+  name           String
+  slug           String     @unique
+  description    String
+  overview       String?
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  projects       Project[]
+  properties     Property[]
+}
+
+model Project {
+  id                   String        @id @default(cuid())
+  name                 String
+  slug                 String        @unique
+  builderId            String
+  builder              Builder       @relation(fields: [builderId], references: [id], onDelete: Cascade)
+  location             String
+  sector               String
+  city                 String
+  state                String
+  pinCode              String?
+  description          String
+  amenities            Json
+  configurations       Json
+  investmentHighlights Json
+  priceRangeMin        Int?
+  priceRangeMax        Int?
+  possessionStatus     ProjectStatus
+  possessionTimeline   String
+  mapQuery             String?
+  seoTitle             String?
+  seoDescription       String?
+  faq                  Json?
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+  properties           Property[]
+}
+
+model Property {
+  id                   String            @id @default(cuid())
+  title                String
+  slug                 String            @unique
+  excerpt              String
+  description          String
+  contentMarkdown      String
+  locationLabel        String
+  sector               String
+  city                 String
+  state                String
+  pinCode              String?
+  priceMin             Int?
+  priceMax             Int?
+  priceText            String?
+  priceType            PriceType
+  propertyType         String
+  status               PropertyStatus
+  possessionStatus     String
+  possessionTimeline   String
+  superArea            Int?
+  carpetArea           Int?
+  expectedRoi          Float?
+  rentalYield          Float?
+  whyInvest            String
+  investmentHighlights Json
+  amenities            Json
+  highlights           Json
+  nearbyPlaces         Json
+  faq                  Json?
+  mapQuery             String?
+  reraNumber           String?
+  brochureUrl          String?
+  seoTitle             String?
+  seoDescription       String?
+  builderId            String?
+  builder              Builder?          @relation(fields: [builderId], references: [id], onDelete: SetNull)
+  projectId            String?
+  project              Project?          @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  createdAt            DateTime          @default(now())
+  updatedAt            DateTime          @updatedAt
+  images               PropertyImage[]
+  variations           PropertyVariation[]
+  tags                 PropertyTag[]
+  leads                Lead[]
+}
+
+model PropertyImage {
+  id          String   @id @default(cuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  url         String
+  alt         String
+  orientation String
+  width       Int
+  height      Int
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model PropertyVariation {
+  id         String   @id @default(cuid())
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  label      String
+  sizeSqft   Int
+  price      Int?
+  status     String?
+  sortOrder  Int      @default(0)
+}
+
+model PropertyTag {
+  id         String          @id @default(cuid())
+  propertyId String
+  property   Property        @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  tag        PropertyTagType
+
+  @@unique([propertyId, tag])
+}
+
+model BlogPost {
+  id             String       @id @default(cuid())
+  title          String
+  slug           String       @unique
+  excerpt        String
+  content        String
+  category       BlogCategory
+  coverImage     String?
+  coverAlt       String?
+  seoTitle       String?
+  seoDescription String?
+  publishedAt    DateTime     @default(now())
+  relatedLink    String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Lead {
+  id         String    @id @default(cuid())
+  propertyId String?
+  property   Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  leadType   LeadType
+  name       String
+  email      String?
+  phone      String
+  message    String?
+  sourcePage String?
+  createdAt  DateTime  @default(now())
+}

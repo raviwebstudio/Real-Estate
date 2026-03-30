@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-sand font-sans text-ink antialiased;
+  background-image:
+    radial-gradient(circle at top, rgba(185, 150, 99, 0.12), transparent 22%),
+    linear-gradient(180deg, #fbf8f3 0%, #f3eee6 100%);
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+::selection {
+  background: rgba(185, 150, 99, 0.22);
+}
+
+.shell {
+  @apply mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8;
+}
+
+.section-space {
+  @apply py-14 sm:py-16 lg:py-20;
+}
+
+.panel {
+  @apply rounded-[28px] border border-black/5 bg-white/85 shadow-glow backdrop-blur;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold;
+}
+
+.prose-rich {
+  @apply max-w-none text-[15px] leading-7 text-taupe;
+}
+
+.prose-rich h2 {
+  @apply mt-8 font-serif text-2xl text-ink;
+}
+
+.prose-rich h3 {
+  @apply mt-6 font-serif text-xl text-ink;
+}
+
+.prose-rich p,
+.prose-rich ul,
+.prose-rich ol {
+  @apply mt-4;
+}
+
+.prose-rich a {
+  @apply text-ink underline decoration-gold/60 underline-offset-4;
+}
+
+.prose-rich li {
+  @apply ml-4 list-disc;
+}
