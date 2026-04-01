@@ -8,7 +8,9 @@ export function SiteFooter() {
       <div className="shell grid gap-10 py-12 lg:grid-cols-[1.2fr_repeat(3,1fr)]">
         <div className="space-y-4">
           <p className="font-serif text-2xl text-ink">{siteConfig.name}</p>
-          <p className="max-w-sm text-sm leading-7 text-taupe">{siteConfig.description}</p>
+          <p className="max-w-sm text-sm leading-7 text-taupe">
+            {siteConfig.description}
+          </p>
           <div className="space-y-1 text-sm text-taupe">
             <p>{siteConfig.phone}</p>
             <p>{siteConfig.email}</p>
@@ -35,7 +37,8 @@ export function SiteFooter() {
         ))}
       </div>
       <div className="shell border-t border-black/5 py-5 text-sm text-taupe">
-        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved. |
+        Made by The Digital Wings
       </div>
     </footer>
   );

@@ -1,6 +1,12 @@
 import type { MetadataRoute } from "next";
 
-import { getBlogPosts, getBuilders, getProjects, getProperties, getSectorSlugs } from "@/lib/queries";
+import {
+  getBlogPosts,
+  getBuilders,
+  getProjects,
+  getProperties,
+  getSectorSlugs,
+} from "@/lib/queries";
 import { siteConfig } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -15,7 +21,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "/",
     "/about",
-    "/services",
     "/properties",
     "/projects",
     "/builders",

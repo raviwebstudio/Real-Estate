@@ -26,7 +26,6 @@ export const siteConfig = {
 export const primaryNavigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
   { href: "/properties", label: "Properties" },
   { href: "/projects", label: "Projects" },
   { href: "/builders", label: "Builders" },
@@ -37,7 +36,6 @@ export const primaryNavigation = [
 export const footerNavigation = {
   company: [
     { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact Us" },
   ],
   explore: [
@@ -100,12 +98,14 @@ export const testimonials = [
 
 export const homeFaqs: FaqItem[] = [
   {
-    question: "Which Gurgaon sectors are strongest for luxury residential investment?",
+    question:
+      "Which Gurgaon sectors are strongest for luxury residential investment?",
     answer:
       "Golf Course Road, Golf Course Extension Road, Southern Peripheral Road, New Gurgaon, and Dwarka Expressway continue to draw premium demand for both end use and investment.",
   },
   {
-    question: "Do you cover ready-to-move as well as under-construction inventory?",
+    question:
+      "Do you cover ready-to-move as well as under-construction inventory?",
     answer:
       "Yes. The platform supports both, with possession timelines, status tags, and investor notes visible on every property page.",
   },

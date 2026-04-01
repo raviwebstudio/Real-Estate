@@ -1,7 +1,12 @@
 import Link from "next/link";
 
 import { PageHero } from "@/components/site/page-hero";
-import { getBlogPosts, getBuilders, getProjects, getProperties } from "@/lib/queries";
+import {
+  getBlogPosts,
+  getBuilders,
+  getProjects,
+  getProperties,
+} from "@/lib/queries";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -34,7 +39,6 @@ export default async function HtmlSitemapPage() {
               items: [
                 ["/", "Home"],
                 ["/about", "About Us"],
-                ["/services", "Services"],
                 ["/properties", "Properties"],
                 ["/projects", "Projects"],
                 ["/builders", "Builders"],
@@ -46,22 +50,37 @@ export default async function HtmlSitemapPage() {
               title: "SEO Pages",
               items: [
                 ["/properties-in-gurgaon", "Properties in Gurgaon"],
-                ["/luxury-apartments-in-gurgaon", "Luxury Apartments in Gurgaon"],
+                [
+                  "/luxury-apartments-in-gurgaon",
+                  "Luxury Apartments in Gurgaon",
+                ],
                 ["/3-bhk-flats-in-gurgaon", "3 BHK Flats in Gurgaon"],
-                ["/ready-to-move-properties-in-gurgaon", "Ready to Move Properties in Gurgaon"],
+                [
+                  "/ready-to-move-properties-in-gurgaon",
+                  "Ready to Move Properties in Gurgaon",
+                ],
               ],
             },
             {
               title: "Properties",
-              items: properties.map((item) => [`/properties/${item.slug}`, item.title]),
+              items: properties.map((item) => [
+                `/properties/${item.slug}`,
+                item.title,
+              ]),
             },
             {
               title: "Projects",
-              items: projects.map((item) => [`/projects/${item.slug}`, item.name]),
+              items: projects.map((item) => [
+                `/projects/${item.slug}`,
+                item.name,
+              ]),
             },
             {
               title: "Builders",
-              items: builders.map((item) => [`/builders/${item.slug}`, item.name]),
+              items: builders.map((item) => [
+                `/builders/${item.slug}`,
+                item.name,
+              ]),
             },
             {
               title: "Blog",
@@ -72,7 +91,11 @@ export default async function HtmlSitemapPage() {
               <h2 className="font-serif text-2xl text-ink">{section.title}</h2>
               <div className="mt-5 flex flex-col gap-3">
                 {section.items.map(([href, label]) => (
-                  <Link key={href} href={href} className="text-sm text-taupe hover:text-ink">
+                  <Link
+                    key={href}
+                    href={href}
+                    className="text-sm text-taupe hover:text-ink"
+                  >
                     {label}
                   </Link>
                 ))}

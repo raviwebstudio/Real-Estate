@@ -53,7 +53,9 @@ async function main() {
     ),
   );
 
-  const builderMap = Object.fromEntries(builders.map((builder) => [builder.name, builder.id]));
+  const builderMap = Object.fromEntries(
+    builders.map((builder) => [builder.name, builder.id]),
+  );
 
   const projects = await Promise.all(
     [
@@ -63,10 +65,15 @@ async function main() {
         location: "Sector 63, Golf Course Extension Road",
         sector: "Sector 63",
         pinCode: "122102",
-        description: "Large-format low-density luxury project with premium brand recall.",
+        description:
+          "Large-format low-density luxury project with premium brand recall.",
         amenities: ["Clubhouse", "Pool", "Wellness", "Sports courts"],
         configurations: ["4 BHK", "4 BHK + Utility"],
-        investmentHighlights: ["Brand premium", "Low density", "Luxury demand depth"],
+        investmentHighlights: [
+          "Brand premium",
+          "Low density",
+          "Luxury demand depth",
+        ],
         priceRangeMin: 65000000,
         priceRangeMax: 78000000,
         possessionStatus: ProjectStatus.UNDER_CONSTRUCTION,
@@ -79,10 +86,15 @@ async function main() {
         location: "Sector 65, Golf Course Extension Road",
         sector: "Sector 65",
         pinCode: "122102",
-        description: "Ready luxury golf-themed community with strong rental and resale relevance.",
+        description:
+          "Ready luxury golf-themed community with strong rental and resale relevance.",
         amenities: ["Golf views", "Residents club", "Spa", "Business lounge"],
         configurations: ["3 BHK", "4 BHK"],
-        investmentHighlights: ["Ready inventory", "Rental demand", "Known premium address"],
+        investmentHighlights: [
+          "Ready inventory",
+          "Rental demand",
+          "Known premium address",
+        ],
         priceRangeMin: 43000000,
         priceRangeMax: 56000000,
         possessionStatus: ProjectStatus.READY_TO_MOVE,
@@ -95,10 +107,20 @@ async function main() {
         location: "Sector 106, Dwarka Expressway",
         sector: "Sector 106",
         pinCode: "122006",
-        description: "Luxury development aimed at growth-oriented buyers in a rising corridor.",
-        amenities: ["Arrival lobby", "Pool deck", "Indoor sports", "Sky gardens"],
+        description:
+          "Luxury development aimed at growth-oriented buyers in a rising corridor.",
+        amenities: [
+          "Arrival lobby",
+          "Pool deck",
+          "Indoor sports",
+          "Sky gardens",
+        ],
         configurations: ["3 BHK", "4 BHK"],
-        investmentHighlights: ["Expressway upside", "Luxury positioning", "Medium-term growth"],
+        investmentHighlights: [
+          "Expressway upside",
+          "Luxury positioning",
+          "Medium-term growth",
+        ],
         priceRangeMin: 36000000,
         priceRangeMax: 52000000,
         possessionStatus: ProjectStatus.UNDER_CONSTRUCTION,
@@ -130,7 +152,8 @@ async function main() {
           faq: [
             {
               question: `Is ${project.name} suitable for premium buyers?`,
-              answer: "Yes. The project is positioned for high-intent residential buyers seeking brand and location quality.",
+              answer:
+                "Yes. The project is positioned for high-intent residential buyers seeking brand and location quality.",
             },
           ],
         },
@@ -138,14 +161,17 @@ async function main() {
     ),
   );
 
-  const projectMap = Object.fromEntries(projects.map((project) => [project.name, project.id]));
+  const projectMap = Object.fromEntries(
+    projects.map((project) => [project.name, project.id]),
+  );
 
   const properties = [
     {
       title: "DLF The Arbour 4 BHK Residences",
       builderName: "DLF",
       projectName: "DLF The Arbour",
-      excerpt: "Premium 4 BHK residences in Sector 63 with brand-led luxury positioning.",
+      excerpt:
+        "Premium 4 BHK residences in Sector 63 with brand-led luxury positioning.",
       locationLabel: "Sector 63, Golf Course Extension Road, Gurgaon",
       sector: "Sector 63",
       pinCode: "122102",
@@ -161,27 +187,79 @@ async function main() {
       carpetArea: 2650,
       expectedRoi: 17.5,
       rentalYield: 3.4,
-      whyInvest: "Brand trust, low-density planning, and strong corridor demand support long-term premium positioning.",
+      whyInvest:
+        "Brand trust, low-density planning, and strong corridor demand support long-term premium positioning.",
       investmentHighlights: ["Builder premium", "Low density", "Luxury demand"],
-      amenities: ["Private lobby", "Infinity pool", "Clubhouse", "Landscaped decks"],
-      highlights: ["Large layouts", "Upper-luxury audience", "High ticket demand"],
+      amenities: [
+        "Private lobby",
+        "Infinity pool",
+        "Clubhouse",
+        "Landscaped decks",
+      ],
+      highlights: [
+        "Large layouts",
+        "Upper-luxury audience",
+        "High ticket demand",
+      ],
       nearbyPlaces: [
-        { category: "Schools", name: "St. Xavier's High School", distance: "10 min" },
-        { category: "Hospitals", name: "CK Birla Hospital", distance: "14 min" },
-        { category: "Metro", name: "Sector 55-56 Rapid Metro", distance: "18 min" },
+        {
+          category: "Schools",
+          name: "St. Xavier's High School",
+          distance: "10 min",
+        },
+        {
+          category: "Hospitals",
+          name: "CK Birla Hospital",
+          distance: "14 min",
+        },
+        {
+          category: "Metro",
+          name: "Sector 55-56 Rapid Metro",
+          distance: "18 min",
+        },
         { category: "Malls", name: "WorldMark Gurgaon", distance: "12 min" },
       ],
-      faq: [{ question: "Is this suitable for NRI buyers?", answer: "Yes. The brand and product positioning are easy to evaluate remotely." }],
+      faq: [
+        {
+          question: "Is this suitable for NRI buyers?",
+          answer:
+            "Yes. The brand and product positioning are easy to evaluate remotely.",
+        },
+      ],
       mapQuery: "DLF The Arbour Sector 63 Gurgaon",
       reraNumber: "RC/REP/HARERA/GGM/680/412/2023/24",
-      tags: [PropertyTagType.FEATURED, PropertyTagType.LUXURY, PropertyTagType.INVESTMENT],
+      tags: [
+        PropertyTagType.FEATURED,
+        PropertyTagType.LUXURY,
+        PropertyTagType.INVESTMENT,
+      ],
       variations: [
-        { label: "4 BHK", sizeSqft: 3950, price: 65000000, status: "Available" },
-        { label: "4 BHK + Utility", sizeSqft: 4300, price: 78000000, status: "Limited" },
+        {
+          label: "4 BHK",
+          sizeSqft: 3950,
+          price: 65000000,
+          status: "Available",
+        },
+        {
+          label: "4 BHK + Utility",
+          sizeSqft: 4300,
+          price: 78000000,
+          status: "Limited",
+        },
       ],
       images: [
-        { url: "/images/placeholders/dlf-arbour-landscape.svg", orientation: "LANDSCAPE", width: 1600, height: 900 },
-        { url: "/images/placeholders/interior-portrait.svg", orientation: "PORTRAIT", width: 900, height: 1400 },
+        {
+          url: "/images/placeholders/dlf-arbour-landscape.svg",
+          orientation: "LANDSCAPE",
+          width: 1600,
+          height: 900,
+        },
+        {
+          url: "/images/placeholders/interior-portrait.svg",
+          orientation: "PORTRAIT",
+          width: 900,
+          height: 1400,
+        },
       ],
       contentMarkdown: `
 ## Overview
@@ -198,7 +276,8 @@ DLF The Arbour targets buyers who want a branded luxury address with scale, priv
       title: "M3M Golf Estate Panorama Residences",
       builderName: "M3M India",
       projectName: "M3M Golf Estate",
-      excerpt: "Ready luxury residences in Sector 65 with golf-themed views and rental relevance.",
+      excerpt:
+        "Ready luxury residences in Sector 65 with golf-themed views and rental relevance.",
       locationLabel: "Sector 65, Golf Course Extension Road, Gurgaon",
       sector: "Sector 65",
       pinCode: "122102",
@@ -214,27 +293,74 @@ DLF The Arbour targets buyers who want a branded luxury address with scale, priv
       carpetArea: 2100,
       expectedRoi: 14.2,
       rentalYield: 4.1,
-      whyInvest: "Ready inventory and clear rental relevance make this attractive for investors and family buyers.",
-      investmentHighlights: ["Ready inventory", "Rental-ready", "Established address"],
+      whyInvest:
+        "Ready inventory and clear rental relevance make this attractive for investors and family buyers.",
+      investmentHighlights: [
+        "Ready inventory",
+        "Rental-ready",
+        "Established address",
+      ],
       amenities: ["Golf views", "Club", "Spa", "Business lounge"],
-      highlights: ["Operational community", "Premium tenant relevance", "Strong sector familiarity"],
+      highlights: [
+        "Operational community",
+        "Premium tenant relevance",
+        "Strong sector familiarity",
+      ],
       nearbyPlaces: [
-        { category: "Schools", name: "Heritage Xperiential Learning", distance: "16 min" },
+        {
+          category: "Schools",
+          name: "Heritage Xperiential Learning",
+          distance: "16 min",
+        },
         { category: "Hospitals", name: "Artemis Hospital", distance: "18 min" },
-        { category: "Metro", name: "Sector 55-56 Rapid Metro", distance: "19 min" },
+        {
+          category: "Metro",
+          name: "Sector 55-56 Rapid Metro",
+          distance: "19 min",
+        },
         { category: "Malls", name: "AIPL Joy Street", distance: "8 min" },
       ],
-      faq: [{ question: "Is this good for rental investors?", answer: "Yes. Ready inventory improves rental clarity and product understanding." }],
+      faq: [
+        {
+          question: "Is this good for rental investors?",
+          answer:
+            "Yes. Ready inventory improves rental clarity and product understanding.",
+        },
+      ],
       mapQuery: "M3M Golf Estate Sector 65 Gurgaon",
       reraNumber: "RC/REP/HARERA/GGM/214/2020/18",
-      tags: [PropertyTagType.FEATURED, PropertyTagType.LUXURY, PropertyTagType.BEST_SELLER],
+      tags: [
+        PropertyTagType.FEATURED,
+        PropertyTagType.LUXURY,
+        PropertyTagType.BEST_SELLER,
+      ],
       variations: [
-        { label: "3 BHK", sizeSqft: 2900, price: 43000000, status: "Available" },
-        { label: "4 BHK", sizeSqft: 3650, price: 56000000, status: "Available" },
+        {
+          label: "3 BHK",
+          sizeSqft: 2900,
+          price: 43000000,
+          status: "Available",
+        },
+        {
+          label: "4 BHK",
+          sizeSqft: 3650,
+          price: 56000000,
+          status: "Available",
+        },
       ],
       images: [
-        { url: "/images/placeholders/m3m-golf-landscape.svg", orientation: "LANDSCAPE", width: 1600, height: 900 },
-        { url: "/images/placeholders/clubhouse-portrait.svg", orientation: "PORTRAIT", width: 900, height: 1400 },
+        {
+          url: "/images/placeholders/m3m-golf-landscape.svg",
+          orientation: "LANDSCAPE",
+          width: 1600,
+          height: 900,
+        },
+        {
+          url: "/images/placeholders/clubhouse-portrait.svg",
+          orientation: "PORTRAIT",
+          width: 900,
+          height: 1400,
+        },
       ],
       contentMarkdown: `
 ## Why buyers shortlist this
@@ -246,7 +372,8 @@ M3M Golf Estate works well for people who want finished product visibility, prem
       title: "Elan The Presidential 3 BHK Sky Homes",
       builderName: "Elan Group",
       projectName: "Elan The Presidential",
-      excerpt: "Luxury 3 BHK sky homes on Dwarka Expressway designed around future corridor upside.",
+      excerpt:
+        "Luxury 3 BHK sky homes on Dwarka Expressway designed around future corridor upside.",
       locationLabel: "Sector 106, Dwarka Expressway, Gurgaon",
       sector: "Sector 106",
       pinCode: "122006",
@@ -262,27 +389,65 @@ M3M Golf Estate works well for people who want finished product visibility, prem
       carpetArea: 1720,
       expectedRoi: 18.8,
       rentalYield: 3.2,
-      whyInvest: "Branded luxury on a fast-moving expressway corridor supports a high-conviction medium-term investment thesis.",
-      investmentHighlights: ["Expressway upside", "Luxury branding", "Future premium demand"],
+      whyInvest:
+        "Branded luxury on a fast-moving expressway corridor supports a high-conviction medium-term investment thesis.",
+      investmentHighlights: [
+        "Expressway upside",
+        "Luxury branding",
+        "Future premium demand",
+      ],
       amenities: ["Arrival lobby", "Sky deck", "Indoor arena", "Pool deck"],
       highlights: ["Growth corridor", "Investor narrative", "Brand visibility"],
       nearbyPlaces: [
         { category: "Schools", name: "DPS Sector 102", distance: "12 min" },
-        { category: "Hospitals", name: "Manipal Hospital Dwarka", distance: "22 min" },
-        { category: "Metro", name: "Dwarka Sector 21 Metro", distance: "25 min" },
+        {
+          category: "Hospitals",
+          name: "Manipal Hospital Dwarka",
+          distance: "22 min",
+        },
+        {
+          category: "Metro",
+          name: "Dwarka Sector 21 Metro",
+          distance: "25 min",
+        },
         { category: "Malls", name: "Conscient One", distance: "9 min" },
       ],
-      faq: [{ question: "Why is Sector 106 drawing attention?", answer: "Connectivity upgrades and premium launches have improved buyer confidence." }],
+      faq: [
+        {
+          question: "Why is Sector 106 drawing attention?",
+          answer:
+            "Connectivity upgrades and premium launches have improved buyer confidence.",
+        },
+      ],
       mapQuery: "Elan The Presidential Sector 106 Gurgaon",
       reraNumber: "RC/REP/HARERA/GGM/722/454/2024/55",
-      tags: [PropertyTagType.LUXURY, PropertyTagType.INVESTMENT, PropertyTagType.HOT_SALE],
+      tags: [
+        PropertyTagType.LUXURY,
+        PropertyTagType.INVESTMENT,
+        PropertyTagType.HOT_SALE,
+      ],
       variations: [
-        { label: "3 BHK", sizeSqft: 2450, price: 36000000, status: "Available" },
+        {
+          label: "3 BHK",
+          sizeSqft: 2450,
+          price: 36000000,
+          status: "Available",
+        },
         { label: "4 BHK", sizeSqft: 3150, price: 52000000, status: "Limited" },
       ],
       images: [
-        { url: "/images/placeholders/elan-presidential-landscape.svg", orientation: "LANDSCAPE", width: 1600, height: 900 },
-        { url: "/images/placeholders/lobby-portrait.svg", orientation: "PORTRAIT", width: 900, height: 1400 },
+        {
+          url: "/images/placeholders/elan-presidential-landscape.svg",
+          orientation: "LANDSCAPE",
+          width: 1600,
+          height: 900,
+        },
+        {
+          url: "/images/placeholders/lobby-portrait.svg",
+          orientation: "PORTRAIT",
+          width: 900,
+          height: 1400,
+        },
       ],
       contentMarkdown: `
 ## Corridor narrative
@@ -294,7 +459,8 @@ Dwarka Expressway is moving from potential into visible premium residential mome
       title: "M3M Golf Estate 3 BHK Golf View Apartments",
       builderName: "M3M India",
       projectName: "M3M Golf Estate",
-      excerpt: "Large 3 BHK ready-to-move apartments with premium views and strong search intent.",
+      excerpt:
+        "Large 3 BHK ready-to-move apartments with premium views and strong search intent.",
       locationLabel: "Sector 65, Gurgaon",
       sector: "Sector 65",
       pinCode: "122102",
@@ -310,24 +476,64 @@ Dwarka Expressway is moving from potential into visible premium residential mome
       carpetArea: 2050,
       expectedRoi: 13.8,
       rentalYield: 4.0,
-      whyInvest: "A strong fit for buyers specifically searching large-format 3 BHK luxury inventory in Gurgaon.",
-      investmentHighlights: ["High-intent config", "Ready inventory", "Rental relevance"],
+      whyInvest:
+        "A strong fit for buyers specifically searching large-format 3 BHK luxury inventory in Gurgaon.",
+      investmentHighlights: [
+        "High-intent config",
+        "Ready inventory",
+        "Rental relevance",
+      ],
       amenities: ["Golf deck", "Club lounge", "Pool", "Sports facilities"],
-      highlights: ["3 BHK search relevance", "Premium community", "Immediate usability"],
+      highlights: [
+        "3 BHK search relevance",
+        "Premium community",
+        "Immediate usability",
+      ],
       nearbyPlaces: [
-        { category: "Schools", name: "Scottish High International School", distance: "20 min" },
+        {
+          category: "Schools",
+          name: "Scottish High International School",
+          distance: "20 min",
+        },
         { category: "Hospitals", name: "Artemis Hospital", distance: "18 min" },
-        { category: "Metro", name: "Millennium City Centre Metro", distance: "25 min" },
+        {
+          category: "Metro",
+          name: "Millennium City Centre Metro",
+          distance: "25 min",
+        },
         { category: "Malls", name: "AIPL Joy Street", distance: "8 min" },
       ],
-      faq: [{ question: "Is this aligned to 3 BHK family demand?", answer: "Yes. The format suits premium family buyers and relocation-led tenants." }],
+      faq: [
+        {
+          question: "Is this aligned to 3 BHK family demand?",
+          answer:
+            "Yes. The format suits premium family buyers and relocation-led tenants.",
+        },
+      ],
       mapQuery: "M3M Golf Estate Sector 65 Gurgaon",
       reraNumber: "RC/REP/HARERA/GGM/214/2020/18",
       tags: [PropertyTagType.FEATURED, PropertyTagType.BEST_SELLER],
-      variations: [{ label: "3 BHK", sizeSqft: 2900, price: 43000000, status: "Available" }],
+      variations: [
+        {
+          label: "3 BHK",
+          sizeSqft: 2900,
+          price: 43000000,
+          status: "Available",
+        },
+      ],
       images: [
-        { url: "/images/placeholders/m3m-golf-landscape.svg", orientation: "LANDSCAPE", width: 1600, height: 900 },
-        { url: "/images/placeholders/clubhouse-portrait.svg", orientation: "PORTRAIT", width: 900, height: 1400 },
+        {
+          url: "/images/placeholders/m3m-golf-landscape.svg",
+          orientation: "LANDSCAPE",
+          width: 1600,
+          height: 900,
+        },
+        {
+          url: "/images/placeholders/clubhouse-portrait.svg",
+          orientation: "PORTRAIT",
+          width: 900,
+          height: 1400,
+        },
       ],
       contentMarkdown: `
 ## 3 BHK demand
@@ -399,7 +605,8 @@ This listing is designed to meet one of the clearest configuration searches in G
       {
         title: "Gurgaon luxury corridors that continue to outperform",
         category: BlogCategory.GURGAON_INSIGHTS,
-        excerpt: "A practical look at the Gurgaon micro-markets where luxury residential demand remains strongest.",
+        excerpt:
+          "A practical look at the Gurgaon micro-markets where luxury residential demand remains strongest.",
         coverImage: "/images/hero/gurgaon-skyline.svg",
         relatedLink: "/luxury-apartments-in-gurgaon",
         content: `
@@ -416,9 +623,11 @@ This listing is designed to meet one of the clearest configuration searches in G
 `,
       },
       {
-        title: "How investors should evaluate ready-to-move property in Gurgaon",
+        title:
+          "How investors should evaluate ready-to-move property in Gurgaon",
         category: BlogCategory.INVESTMENT,
-        excerpt: "Ready inventory reduces uncertainty, but only if yield, community quality, and micro-market depth are assessed together.",
+        excerpt:
+          "Ready inventory reduces uncertainty, but only if yield, community quality, and micro-market depth are assessed together.",
         coverImage: "/images/hero/investment-guide.svg",
         relatedLink: "/ready-to-move-properties-in-gurgaon",
         content: `
@@ -435,7 +644,8 @@ Completed product gives faster clarity on quality, rental readiness, and communi
       {
         title: "What makes a 3 BHK flat in Gurgaon easier to resell",
         category: BlogCategory.PROPERTY_GUIDES,
-        excerpt: "Configuration demand is only one part of the story. Builder trust and sector quality matter just as much.",
+        excerpt:
+          "Configuration demand is only one part of the story. Builder trust and sector quality matter just as much.",
         coverImage: "/images/hero/three-bhk-guide.svg",
         relatedLink: "/3-bhk-flats-in-gurgaon",
         content: `
@@ -451,9 +661,11 @@ Completed product gives faster clarity on quality, rental readiness, and communi
 `,
       },
       {
-        title: "How luxury project branding changes buyer perception in Gurgaon",
+        title:
+          "How luxury project branding changes buyer perception in Gurgaon",
         category: BlogCategory.GURGAON_INSIGHTS,
-        excerpt: "Premium project positioning influences shortlist behaviour, trust, and conversion speed in Gurgaon.",
+        excerpt:
+          "Premium project positioning influences shortlist behaviour, trust, and conversion speed in Gurgaon.",
         coverImage: "/images/hero/luxury-branding.svg",
         relatedLink: "/properties-in-gurgaon",
         content: `

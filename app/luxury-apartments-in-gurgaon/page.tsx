@@ -18,7 +18,12 @@ export default async function LuxuryApartmentsPage() {
 
   return (
     <>
-      <PageHero eyebrow="SEO Landing" title={config.title} description={config.intro} breadcrumbs={[{ href: "/", label: "Home" }, { label: config.title }]} />
+      <PageHero
+        eyebrow="SEO Landing"
+        title={config.title}
+        description={config.intro}
+        breadcrumbs={[{ href: "/", label: "Home" }, { label: config.title }]}
+      />
       <section className="pb-16">
         <div className="shell space-y-8">
           <div className="panel p-8 text-sm leading-8 text-taupe">

@@ -9,13 +9,19 @@ import { getSectorProperties, getSectorSlugs } from "@/lib/queries";
 function toSectorName(slug: string) {
   return slug
     .split("-")
-    .map((part) => (part === "sector" ? "Sector" : part.charAt(0).toUpperCase() + part.slice(1)))
+    .map((part) =>
+      part === "sector"
+        ? "Sector"
+        : part.charAt(0).toUpperCase() + part.slice(1),
+    )
     .join(" ");
 }
 
 export async function generateStaticParams() {
   const sectors = await getSectorSlugs();
-  return sectors.map((sector) => ({ sectorSlug: sector.toLowerCase().replace(/\s+/g, "-") }));
+  return sectors.map((sector) => ({
+    sectorSlug: sector.toLowerCase().replace(/\s+/g, "-"),
+  }));
 }
 
 export async function generateMetadata({
@@ -60,8 +66,9 @@ export default async function SectorPage({
         <div className="shell space-y-8">
           <div className="panel p-8 text-sm leading-8 text-taupe">
             <p>
-              {sectorName} is an important Gurgaon micro-market for buyers comparing
-              infrastructure, builder quality, and livability at the sector level.
+              {sectorName} is an important Gurgaon micro-market for buyers
+              comparing infrastructure, builder quality, and livability at the
+              sector level.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">

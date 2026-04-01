@@ -9,7 +9,12 @@ import { ProjectCard } from "@/components/site/project-card";
 import { PropertyCard } from "@/components/site/property-card";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Testimonials } from "@/components/site/testimonials";
-import { getBlogPosts, getBuilders, getFeaturedProperties, getProjects } from "@/lib/queries";
+import {
+  getBlogPosts,
+  getBuilders,
+  getFeaturedProperties,
+  getProjects,
+} from "@/lib/queries";
 import { buildMetadata } from "@/lib/metadata";
 import { homeFaqs, serviceHighlights, siteConfig } from "@/lib/site";
 
@@ -18,7 +23,11 @@ export const metadata = buildMetadata({
   description:
     "Premium Gurgaon real estate platform for luxury apartments, buyer advisory, and investor-led residential opportunities.",
   path: "/",
-  keywords: ["luxury apartments in Gurgaon", "properties in Gurgaon", "Gurgaon real estate"],
+  keywords: [
+    "luxury apartments in Gurgaon",
+    "properties in Gurgaon",
+    "Gurgaon real estate",
+  ],
 });
 
 export default async function HomePage() {
@@ -52,8 +61,8 @@ export default async function HomePage() {
               Premium homes and investor-ready property in Gurgaon.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-taupe">
-              Designed for serious buyers and investors looking across Golf Course Road,
-              Golf Course Extension Road, and Dwarka Expressway.
+              Designed for serious buyers and investors looking across Golf
+              Course Road, Golf Course Extension Road, and Dwarka Expressway.
             </p>
 
             <form
@@ -90,13 +99,22 @@ export default async function HomePage() {
             </form>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/luxury-apartments-in-gurgaon" className="rounded-full border border-black/10 px-4 py-2 text-sm text-ink">
+              <Link
+                href="/luxury-apartments-in-gurgaon"
+                className="rounded-full border border-black/10 px-4 py-2 text-sm text-ink"
+              >
                 Luxury Apartments
               </Link>
-              <Link href="/3-bhk-flats-in-gurgaon" className="rounded-full border border-black/10 px-4 py-2 text-sm text-ink">
+              <Link
+                href="/3-bhk-flats-in-gurgaon"
+                className="rounded-full border border-black/10 px-4 py-2 text-sm text-ink"
+              >
                 3 BHK Flats
               </Link>
-              <Link href="/ready-to-move-properties-in-gurgaon" className="rounded-full border border-black/10 px-4 py-2 text-sm text-ink">
+              <Link
+                href="/ready-to-move-properties-in-gurgaon"
+                className="rounded-full border border-black/10 px-4 py-2 text-sm text-ink"
+              >
                 Ready to Move
               </Link>
             </div>
@@ -117,10 +135,22 @@ export default async function HomePage() {
       <section className="pb-6">
         <div className="shell grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {[
-            ["Luxury-first UI", "Built for premium residential discovery and stronger conversion intent."],
-            ["Lead engine", "Pricing, brochure, site visit, WhatsApp, and direct call pathways."],
-            ["SEO scale", "Location pages, dynamic routes, schema markup, and sitemap coverage."],
-            ["Investor clarity", "ROI, rental yield, and investment angles on every core listing."],
+            [
+              "Luxury-first UI",
+              "Built for premium residential discovery and stronger conversion intent.",
+            ],
+            [
+              "Lead engine",
+              "Pricing, brochure, site visit, WhatsApp, and direct call pathways.",
+            ],
+            [
+              "SEO scale",
+              "Location pages, dynamic routes, schema markup, and sitemap coverage.",
+            ],
+            [
+              "Investor clarity",
+              "ROI, rental yield, and investment angles on every core listing.",
+            ],
           ].map(([title, text]) => (
             <div key={title} className="panel p-6">
               <p className="font-serif text-2xl text-ink">{title}</p>
@@ -158,7 +188,9 @@ export default async function HomePage() {
             {serviceHighlights.map((item) => (
               <article key={item.title} className="panel p-6">
                 <h3 className="font-serif text-2xl text-ink">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-taupe">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-taupe">
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
